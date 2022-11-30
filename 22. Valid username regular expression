@@ -1,0 +1,40 @@
+
+ [a-zA-Z]\w[7-29]
+
+//Tag content extractor
+
+4
+<h1>Nayeem loves counseling</h1>
+<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>
+<Amee>safat codes like a ninja</amee>
+<SA premium>Imtiaz has a secret crush</SA premium>
+
+o/p:
+Nayeem loves counseling
+Sanjay has no watch
+So wait for a while
+None
+Imtiaz has a secret crush
+
+    Scanner in = new Scanner(System.in);
+    int testCases = Integer.parseInt(in.nextLine());
+	while(testCases>0){
+	    String line = in.nextLine();
+            boolean matchfound = false;
+
+          //Write your code here
+
+            String regex = "<(.+)>([^<>]+)(</\\1>)";
+	    Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(line);
+
+            while(matcher.find()){
+                System.out.println(matcher.group(2));
+                matchfound = true;
+            }
+
+            if(!matchfound){
+                System.out.println("None");
+            }
+	     testCases--;
+	  }
