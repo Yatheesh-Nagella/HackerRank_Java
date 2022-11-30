@@ -1,0 +1,31 @@
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+
+  ArrayList alist[] = new ArrayList[20000];//20000 given constraint
+
+  int list = sc.nextInt();
+  for(int i =0;i<list;i++){
+   alist[i] = new ArrayList();
+   int number = sc.nextInt();
+
+   for(int j=0;j<number;j++){
+    int value = sc.nextInt();
+    //adding value to alist[i]
+    alist[i].add(value);
+   }
+  }
+
+  int queries = sc.nextInt();
+  for(int i =0;i<queries;i++){
+   int x = sc.nextInt();
+   int y = sc.nextInt();
+
+   try{
+    //x-1,y-1 because the ds started from 1(in the fig) but in java the ds starts from 0.
+    System.out.println(alist[x-1].get(y-1));
+   }
+   catch(Exception e){
+    System.out.println("ERROR!");
+  }
+ }
+}
