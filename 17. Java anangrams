@@ -1,0 +1,24 @@
+static boolean isAnagram(String a, String b) {
+
+        // Complete the function
+        if(a.length() != b.length()){
+            return false;
+        }
+        else{
+            a = a.replace(" ","").toLowerCase();
+            b = b.replace(" ","").toLowerCase();
+            
+            char[] achar = a.toCharArray();
+            char[] bchar = b.toCharArray();
+            
+            java.util.Arrays.sort(achar);//to import arrays 
+            java.util.Arrays.sort(bchar);
+            
+            if(java.util.Arrays.equals(achar,bchar)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
