@@ -1,0 +1,9 @@
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        BigInteger n = sc.nextBigInteger();
+        sc.close();
+// isProbablePrime()- method is used to tell if this BigInteger is probably prime or if it’s definitely composite
+        System.out.println(n.isProbablePrime(10)?"prime":"Not prime");
+    }
+}
