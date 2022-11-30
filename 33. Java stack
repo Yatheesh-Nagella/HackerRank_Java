@@ -1,0 +1,45 @@
+class solution{
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNext()) {
+			String s=sc.next();
+            //Complete the code
+            System.out.println(valid(s));
+		}
+		sc.close();
+	}
+    
+    public static boolean valid(String s){
+        Stack<Character> stack = new Stack<Character>();
+        
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '['){
+                stack.push(s.charAt(i));
+            }
+            else {
+                if(stack.isEmpty()){
+                return false;
+            }
+            
+            else{
+                char pop_value = stack.pop();
+                if(s.charAt(i) == ']' && pop_value != '['){
+                    return false;
+                }
+                else if(s.charAt(i) == '}' && pop_value != '{'){
+                    return false;
+                }
+                else if(s.charAt(i) == ')' && pop_value != '('){
+                    return false;
+                }
+              }
+            }
+        }
+        if(stack.isEmpty()){
+            return true;
+        }
+        else return false;
+    }
+}
