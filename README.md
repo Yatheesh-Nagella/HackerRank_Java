@@ -1,1 +1,2 @@
-# Hacker-rank_Java_Solutions
+# Hacker_rank
+##Java_Solutions
